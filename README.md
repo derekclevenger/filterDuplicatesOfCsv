@@ -5,9 +5,9 @@
 ### Execute: go run main.go [your/path/to/csv/file.scv] [your/path/to/desired/end/location.csv]
 
 # For Docker
-###  Change to directory container files
+###  Change to directory containing files
 ### Run: docker build --tag filterduplicates .
-### Run: docker run filterDuplicates /bin/bash
+### Run: docker run filterduplicates /bin/bash
 ### Run: /bin/bash
 ### Execute: go run main.go [your/path/to/csv/file.scv] [your/path/to/desired/end/location.csv]
 
