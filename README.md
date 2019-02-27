@@ -9,6 +9,6 @@
 ###  Change to directory containing files
 ### Run: docker build --tag filterduplicates .
 ### Run: docker run -t -i -v [path to local FOLDER containing csv]:/var/[folder containing csv name] filterduplicates /bin/bash
-### go run main.go /var/[foldername]/[name of csv file] /var/[foldername]/[name of resulting csv file] "[Desired url to filter on]"
+### Execute: go run main.go /var/[foldername]/[name of csv file] /var/[foldername]/[name of resulting csv file] "[Desired url to filter on]"
 ### Run: exit
 
