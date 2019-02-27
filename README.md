@@ -7,7 +7,7 @@
 # For Docker
 ###  Change to directory containing files
 ### Run: docker build --tag filterduplicates .
-### Run: docker run filterduplicates /bin/bash
-### Run: /bin/bash
-### Execute: go run main.go [your/path/to/csv/file.csv] [your/path/to/desired/end/location.csv]
+### Run: docker run -t -i -v [path to local FOLDER containing csv]:/var/[folder containing csv name] filterduplicates /bin/bash
+### go run main.go /var/[foldername]/[name of csv file] /var/[foldername]/[name of resulting csv file]
+### Run: exit
 
