@@ -17,6 +17,7 @@ type Urls struct {
 func main() {
 	readFile := os.Args[1]
 	writeFile := os.Args[2]
+	filter := os.Args[3]
 
 	data, err := ioutil.ReadFile(readFile)
 	if err != nil {
@@ -32,7 +33,7 @@ func main() {
 
 	defer file.Close()
 
-	l := dataToWriteToCsv(urls)
+	l := dataToWriteToCsv(urls, filter)
 
 	w := csv.NewWriter(file)
 	defer w.Flush()
@@ -45,20 +46,22 @@ func main() {
 	fmt.Println("Process finished successfully")
 }
 
-func dataToWriteToCsv(urls []Urls) [][]string {
+func dataToWriteToCsv(urls []Urls, filter string) [][]string {
 	m := make(map[string]interface{})
 	var l [][]string
 	for x := 0; x < len(urls); x++ {
 		if _, ok := m[urls[x].Page]; ok {
 
 		} else {
-			m[urls[x].Page] = nil
-			u := []string{
-				urls[x].Page,
+			if strings.Contains(urls[x].Page, filter) {
+				m[urls[x].Page] = nil
+				u := []string{
+					urls[x].Page,
+				}
+				l = append(l, u)
 			}
-			l = append(l, u)
-		}
 
+		}
 	}
 	return l
 }
